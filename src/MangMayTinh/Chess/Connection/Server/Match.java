@@ -42,7 +42,7 @@ public class Match implements Runnable, PlayerInterface {
         this.chessboard = new Chessboard();
         this.chessboard.setIsFirstPlayer(true);
         this.chessboard.drawChessboard();
-        this.chessboard.setVisible(true);
+        //this.chessboard.setVisible(true);
         this.firstPlayer.start();
         this.secondPlayer.start();
         this.firstPlayer.sendMessage(MessageType.isFirstPlayer, true);

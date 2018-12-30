@@ -127,7 +127,6 @@ public class Server extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         startServerButton = new javax.swing.JButton();
-        stopServerButton = new javax.swing.JButton();
         messageLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -154,15 +153,6 @@ public class Server extends javax.swing.JFrame {
         startServerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startServerButtonActionPerformed(evt);
-            }
-        });
-
-        stopServerButton.setText("Stop server");
-        stopServerButton.setToolTipText("stop server");
-        stopServerButton.setEnabled(false);
-        stopServerButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stopServerButtonActionPerformed(evt);
             }
         });
 
@@ -272,9 +262,7 @@ public class Server extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(328, 328, 328)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(stopServerButton)
-                    .addComponent(startServerButton))
+                .addComponent(startServerButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(240, 240, 240)
@@ -293,9 +281,7 @@ public class Server extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(startServerButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(stopServerButton)
-                .addContainerGap(196, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
 
         pack();
@@ -322,17 +308,12 @@ public class Server extends javax.swing.JFrame {
             messageLabel.setForeground(Color.green);
             messageLabel.setText("Server started!");
             startServerButton.setEnabled(false);
-            stopServerButton.setEnabled(true);
         } catch (Exception e) {
             System.out.println(e.toString());
             messageLabel.setForeground(Color.red);
             messageLabel.setText("Failed to start server with port number: " + portString);
         }
     }//GEN-LAST:event_startServerButtonActionPerformed
-
-    private void stopServerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stopServerButtonActionPerformed
-        System.out.println("Stoping server");
-    }//GEN-LAST:event_stopServerButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -385,6 +366,5 @@ public class Server extends javax.swing.JFrame {
     private javax.swing.JLabel messageLabel;
     private javax.swing.JTextField portTextField;
     private javax.swing.JButton startServerButton;
-    private javax.swing.JButton stopServerButton;
     // End of variables declaration//GEN-END:variables
 }
